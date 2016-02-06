@@ -13,7 +13,7 @@ class Exercise3Spec extends UnitSpec {
 
     it("ユーザごとにログがグループ化されていること") {
       val groupdLogs = LogCounter(logs).groupByUser
-      val franksLogs = groupdLogs.get("frank")
+      val franksLogs = groupdLogs.get("frank").get
 
       groupdLogs.get("john").size shouldBe 1
       groupdLogs.get("guest").size shouldBe 1
