@@ -12,13 +12,13 @@ object LtsvParser {
       }).toMap
 
       Log(
-        host = map.getOrElse("host", ""),
-        user = map.getOrElse("user", ""),
-        epoch = map.getOrElse("epoch", "0").toInt,
-        req = map.getOrElse("req", ""),
-        status = map.getOrElse("status", "0").toInt,
-        size = map.getOrElse("size", "0").toInt,
-        referer = map.getOrElse("referer", "")
+        host = map("host"),
+        user = map.get("user"),
+        epoch = map("epoch").toInt,
+        req = map("req"),
+        status = map("status").toInt,
+        size = map("size").toInt,
+        referer = map.get("referer")
       )
     }).toIterable
   }
