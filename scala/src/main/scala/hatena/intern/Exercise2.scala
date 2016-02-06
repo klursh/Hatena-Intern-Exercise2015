@@ -13,12 +13,12 @@ object LtsvParser {
 
       Log(
         host = map("host"),
-        user = map.get("user"),
+        user = if (map("user") == "-") None else Some(map("user")),
         epoch = map("epoch").toInt,
         req = map("req"),
         status = map("status").toInt,
         size = map("size").toInt,
-        referer = map.get("referer")
+        referer = if (map("referer") == "-") None else Some(map("referer"))
       )
     }).toIterable
   }
