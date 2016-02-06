@@ -55,6 +55,7 @@ class Exercise2Spec extends UnitSpec {
 
     it("LTSVファイルが正しくパースできない形式の場合") {
       // エラーハンドリングの設計を考えながら、テストを書いてみてください
+      // val logs = LtsvParser.parse("../sample_data/invalid_format_log.ltsv")
     }
 
     it("LTSVファイルが存在しない場合") {
