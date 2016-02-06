@@ -2,7 +2,7 @@ package hatena.intern
 
 import org.joda.time.{ DateTimeZone, DateTime }
 
-case class Log(host: String, user: String, epoch: Int, req: String, status: Int, size: Int, referer: String) {
+case class Log(host: String, user: Option[String], epoch: Int, req: String, status: Int, size: Int, referer: Option[String]) {
   def method: String = req.split(" ")(0)
 
   def path: String = req.split(" ")(1)
