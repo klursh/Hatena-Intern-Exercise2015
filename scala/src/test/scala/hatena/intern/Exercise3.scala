@@ -19,7 +19,10 @@ class Exercise3Spec extends UnitSpec {
       groupdLogs.get("guest").size shouldBe 1
 
       franksLogs.size shouldBe 3
-      // ただしくグルーピングされているかどうかを検査するテストの続きを書いてみてください
+      franksLogs.forall(_.user.get == "frank") shouldBe true
+      franksLogs.toSeq(0).status shouldBe 200
+      franksLogs.toSeq(1).status shouldBe 500
+      franksLogs.toSeq(2).status shouldBe 404
     }
   }
 
