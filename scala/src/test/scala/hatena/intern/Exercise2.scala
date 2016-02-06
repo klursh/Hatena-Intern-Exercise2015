@@ -1,5 +1,7 @@
 package hatena.intern
 
+import java.io.FileNotFoundException
+
 import hatena.intern.helper._
 
 class Exercise2Spec extends UnitSpec {
@@ -56,7 +58,9 @@ class Exercise2Spec extends UnitSpec {
     }
 
     it("LTSVファイルが存在しない場合") {
-      // エラーハンドリングの設計を考えながら、テストを書いてみてください
+      intercept[FileNotFoundException] {
+        LtsvParser.parse("../sample_data/aaaaaa.ltsv")
+      }
     }
   }
 
